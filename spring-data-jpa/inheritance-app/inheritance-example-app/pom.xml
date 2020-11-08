@@ -12,7 +12,7 @@
 	<artifactId>inheritance-example-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>inheritance-example-app</name>
-	<description>Example demonstrating how to use inheritance with Spring Boot and Spring Data JPA</description>
+	<description>Example demonstrating how to implement inheritance with Spring Boot and Spring Data JPA</description>
 
 	<properties>
 		<java.version>11</java.version>
