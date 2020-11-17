@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Thymeleaf Example App</title>
+</head>
+
+<body>
+    <h2>Customer Data</h2>
+    <table border="3px">
+        <thead>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+            <th>Age</th>
+            <th>Old Enough to Rent Car</th>
+        </thead>
+
+        <tbody>
+            <tr th:each="customer : ${customers}">
+                <td th:text="${customer.firstName}"/>
+                <td th:text="${customer.middleName}"/>
+                <td th:text="${customer.lastName}"/>
+                <td th:text="${customer.dob}"/>
+                <td th:text="${customer.age}"/>
+                <td th:text="${customer.ableToRent}"/>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
