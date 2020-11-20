@@ -1,0 +1,21 @@
+<!doctype html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Home Page</title>
+    </head>
+
+    <body>
+        <form method="post" action="/createCustomer" modelAttribute="createCustomer">
+            First name : <input type="text" name="firstName" th:value="${customer.firstName} ?: ''"/>
+            <span th:text="${errorMsg.firstNameErr}"></span><br>
+            Last name : <input type="text" name="lastName" th:value="${customer.lastName} ?: ''"/>
+            <span th:text="${errorMsg.lastNameErr}"></span><br>
+            Email : <input type="text" name="email"/>
+            <span th:text="${errorMsg.emailErr}"></span><br>
+            Password : <input type="password" name="password"/>
+            <span th:text="${errorMsg.passwordErr}"></span><br>
+            <input type="submit" name="submit">
+        </form>
+    </body>
+</html>
