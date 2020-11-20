@@ -36,7 +36,7 @@ public class CreateCustomerController {
 
     @PostMapping("/createCustomer")
     public String createCustomer(@ModelAttribute("customer") @Valid Customer customer,
-                                 BindingResult binding, RedirectAttributes attr, Model model) {
+                                 BindingResult binding, RedirectAttributes attributes, Model model) {
         // Create Object to store error message details
         CreateCustomerErrorMsg errorMsg = new CreateCustomerErrorMsg();
 
@@ -56,14 +56,14 @@ public class CreateCustomerController {
             }
             // Add Flash attributes to handle the errors by binding the data and repopulating
             // the form once the page gets redirected
-            attr.addFlashAttribute("customer", customer);
-            attr.addFlashAttribute("errorMsg", errorMsg);
+            attributes.addFlashAttribute("customer", customer);
+            attributes.addFlashAttribute("errorMsg", errorMsg);
             return "redirect:/";
         }else{
             // Successful account creation, add customer attribute to the model and navigate to success page
-            model.addAttribute("customer", customer);
+            attributes.addFlashAttribute("customer", customer);
             customerServiceImpl.saveCustomer(customer);
-            return "success";
+            return "redirect:/success";
         }
     }
 
