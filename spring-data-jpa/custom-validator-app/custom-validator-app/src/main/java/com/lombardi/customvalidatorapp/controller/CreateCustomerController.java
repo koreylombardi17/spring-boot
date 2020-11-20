@@ -60,12 +60,10 @@ public class CreateCustomerController {
             attr.addFlashAttribute("errorMsg", errorMsg);
             return "redirect:/";
         }else{
-            // Successful account creation, add attributes to the model and navigate to success page
-            // these 2 lines of code can get deleted once success page is created
+            // Successful account creation, add customer attribute to the model and navigate to success page
             model.addAttribute("customer", customer);
-            model.addAttribute("errorMsg", errorMsg);
             customerServiceImpl.saveCustomer(customer);
-            return "redirect:/success";
+            return "success";
         }
     }
 
